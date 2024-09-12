@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduce el Código Secreto</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            color: #f1f1f1;
+        }
+        #codeForm {
+            background: #1c1c1c;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+            text-align: center;
+        }
+        h2 {
+            color: #f00;
+            font-size: 24px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #f00;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #f00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #900;
+        }
+        #result {
+            margin-top: 15px;
+            font-size: 18px;
+            transition: all 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="codeForm">
+        <h2>Introduce el Código... si te atreves</h2>
+        <input type="text" id="code" placeholder="Escribe tu código..." maxlength="10">
+        <button onclick="checkCode()">Enviar</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function checkCode() {
+            var code = document.getElementById("code").value;
+            var result = document.getElementById("result");
+
+            // Aquí puedes cambiar el código correcto
+            if (code === "666") {
+                result.textContent = "Bienvenido... a tu destino final.";
+                result.style.color = "green";
+                result.style.transform = "scale(1.2)";
+            } else {
+                result.textContent = "Código incorrecto... el reloj sigue corriendo.";
+                result.style.color = "red";
+                result.style.transform = "scale(0.8)";
+            }
+        }
+    </script>
+</body>
+</html>
