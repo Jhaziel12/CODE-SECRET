@@ -6,55 +6,74 @@
     <title>Introduce el Código Secreto</title>
     <style>
         body {
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Creepster', cursive;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #000;
-            color: #f1f1f1;
+            margin: 0;
+            background: url('https://images.unsplash.com/photo-1603580865642-d7f98f8f7f80') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            overflow: hidden;
         }
         #codeForm {
-            background: #1c1c1c;
+            background: rgba(0, 0, 0, 0.7);
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+            box-shadow: 0 0 15px rgba(255, 69, 0, 0.8);
             text-align: center;
+            position: relative;
         }
         h2 {
-            color: #f00;
-            font-size: 24px;
+            color: #ffa500;
+            font-size: 28px;
+            margin: 0;
         }
         input[type="text"] {
             padding: 10px;
             margin-right: 10px;
-            border: 1px solid #f00;
+            border: 2px solid #ffa500;
             border-radius: 5px;
             background-color: #333;
             color: #fff;
+            font-size: 16px;
         }
         button {
             padding: 10px 20px;
-            background-color: #f00;
-            color: white;
+            background-color: #ff4500;
+            color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 16px;
         }
         button:hover {
-            background-color: #900;
+            background-color: #ff6347;
         }
         #result {
             margin-top: 15px;
             font-size: 18px;
             transition: all 0.5s ease-in-out;
         }
+        .fog {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0.5;
+            pointer-events: none;
+        }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="codeForm">
-        <h2>Introduce el Código... si te atreves</h2>
-        <input type="text" id="code" placeholder="Escribe tu código..." maxlength="10">
+        <div class="fog"></div>
+        <h2>Introduce el Código Secreto... si te atreves</h2>
+        <input type="text" id="code" placeholder="Escribe tu código...">
         <button onclick="checkCode()">Enviar</button>
         <p id="result"></p>
     </div>
@@ -65,14 +84,12 @@
             var result = document.getElementById("result");
 
             // Aquí puedes cambiar el código correcto
-            if (code === "666") {
-                result.textContent = "Bienvenido... a tu destino final.";
-                result.style.color = "green";
-                result.style.transform = "scale(1.2)";
+            if (code === "BOO!") {
+                result.textContent = "¡Código correcto! Has evadido a los fantasmas.";
+                result.style.color = "lime";
             } else {
-                result.textContent = "Código incorrecto... el reloj sigue corriendo.";
+                result.textContent = "Código incorrecto... las criaturas de la noche están cerca.";
                 result.style.color = "red";
-                result.style.transform = "scale(0.8)";
             }
         }
     </script>
